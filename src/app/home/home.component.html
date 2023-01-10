@@ -1,0 +1,21 @@
+<div>
+
+</div>
+<section class="product">
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-md-3" *ngFor="let prod of productArray">
+                <div class="box">
+                    <div class="content">
+                        <h3 style="color:red">{{prod.name}}</h3>
+                        <h4>{{prod.cost*prod.qnt|currency}}</h4>
+                        <button type="button" class="btn" (click)="inc(prod)">+</button>
+                        <span>{{prod.qnt}}</span>
+                        <button type="button" class="btn" (click)="dec(prod)">-</button>
+                    </div>
+                    <button class="btn">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,19 @@
+<div class="card w-50 mx-auto mt-4" text-align="center">
+    <h3 align="center">Login Form</h3>
+    <form [formGroup]="form" (ngSubmit)="login()">
+        <table class=" table table-striped">
+            <tr>
+                <label>User Name:</label>
+                <input type="text" name="uname" formControlName="uname">
+            </tr><br>
+            <tr>
+                <label>Password:</label>
+                <input type="password" name="password" formControlName="password">
+            </tr><br>
+            <tr>
+                <button class="btn btn-primary" align="center">SignUp</button>
+            </tr>
+
+        </table>
+    </form>
+</div>

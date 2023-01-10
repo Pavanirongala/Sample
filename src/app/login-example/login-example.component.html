@@ -1,0 +1,57 @@
+<div class="card w-50 mx-auto mt-4">
+    <div *ngFor="let form of forms; let i=index">
+        <form [formGroup]="form">
+            <h3>Form - {{i + 1}}</h3>
+            <label>User Name:</label>
+            <input type="text" name="uname" formControlName="uname" class="form-control" [(ngModel)]="uname"
+                placeholder="Enter your name" required
+                [ngClass]="{'is-valid': (form.get('uname')?.dirty||form.get('uname')?.touched) && form.get('uname')?.hasError('required')&&form.get('uname')?.hasError('pattern')}">
+            <div *ngIf="(form.get('uname')?.dirty||form.get('uname')?.touched) && form.get('uname')?.hasError('required')"
+                class="valid">
+                User
+                name is
+                required
+            </div>
+            <div *ngIf="(form.get('uname')?.dirty||form.get('uname')?.valid) && form.get('uname')?.hasError('pattern')"
+                class="valid">
+                User
+                name must be valid
+            </div>
+
+
+            <label>Email:</label>
+            <input type="text" name="email" class="form-control" formControlName="email" [(ngModel)]="email"
+                placeholder="Enter your email"
+                [ngClass]="{'is-valid': (form.get('email')?.dirty||form.get('email')?.touched) && form.get('email')?.hasError('required')}" />
+            <div *ngIf="(form.get('email')?.dirty||form.get('email')?.touched) && form.get('email')?.hasError('required')"
+                class="valid">
+                Email is
+                required
+            </div>
+            <div *ngIf="(form.get('email')?.dirty||form.get('email')?.touched) && form.get('email')?.hasError('email')"
+                class="valid">
+                Email must be valid
+            </div>
+
+
+            <label>Address:</label>
+            <input type="textarea" name="address" class="form-control" formControlName="address" [(ngModel)]="address"
+                placeholder="Enter your address"
+                [ngClass]="{'is-valid': (form.get('address')?.dirty||form.get('address')?.touched) && form.get('address')?.hasError('required')}" />
+            <div *ngIf="(form.get('address')?.dirty||form.get('address')?.touched) && form.get('address')?.hasError('required')"
+                class="valid">
+                Address is
+                required
+            </div>
+
+            <br>
+            <div>
+                <button *ngIf="i!==0" class="btn btn-primary" (click)="deleteData(i)">Delete Form</button>
+            </div>
+        </form><br>
+    </div>
+    <div>
+        <button class="btn btn-primary" (click)="addData()" style="margin-right: 16px">Add Form</button>
+        <button class="btn btn-success">Submit Form</button>
+    </div>
+</div>

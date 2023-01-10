@@ -1,0 +1,21 @@
+<html>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Fname</th>
+            <th>Lname</th>
+            <th>Address</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let student of students">
+            <td>{{student.id}}</td>
+            <td>{{student.fname}}</td>
+            <td>{{student.lname}}</td>
+            <td>{{student.address}}</td>
+        </tr>
+    </tbody>
+</table>
+
+</html>

@@ -1,0 +1,63 @@
+<!-- //Directives -->
+<!-- <p *ngIf="show">Hello</p>
+<table border="2">
+    <tr *ngFor="let x of names">
+        <td>{{x}}</td>
+    </tr>
+</table>
+<h1>This is heading tag</h1>
+<div [ngStyle]="{'background':'yellow'}">Angular</div>
+<h2 appCustom>This is heading2 tag</h2>
+<p appCustom>Paragraph</p>
+<hr color="blue">
+
+<!-- Databinding -->
+<!-- {{myvariable}}<br>
+<button (click)="showData($event)">Click here</button><br>
+<input type="text" [value]="username"><br>
+<input type="text" [(ngModel)]="userName" />
+<p>{{userName}}</p>
+<hr color="yellow"> -->
+
+
+<!-- Template driven -->
+<!--
+
+<!-- Reactive form -->
+
+<!-- <form [formGroup]="login">
+    <table border="1">
+        Username:<input type="text" class="form-control" formControlName="Uname"><br><br>
+        Password:<input type="password" class="form-control" formControlName="password"><br><br>
+        <button class="btn btn-primary" (click)="showdata()">Login</button>
+    </table>
+</form><br><br> -->
+
+
+
+
+<!-- <form #data="ngForm" (ngSubmit)="addData(data.value)">
+    Title:<input type="text" ngModel name="title" /><br><br>
+    Price:<input type="text" ngModel name="price" /><br><br>
+    <button>Add</button>
+</form> -->
+
+<button (click)="getData()" class="btn btn-primary">Get</button><br>
+<div style="color:red">{{error}}</div><br><br>
+
+<div *ngIf="data">
+    <table border="1">
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>price</th>
+        </tr>
+        <tr *ngFor="let products of data">
+            <td>{{products.id}}</td>
+            <td>{{products.title}}</td>
+            <td>{{products.price}}</td>
+        </tr>
+    </table>
+</div>
+<button (click)="onEdit()" class="btn btn-primary">Edit</button><br><br>
+<button (click)="onDelete(1)" class="btn btn-danger">Delete #1</button>
